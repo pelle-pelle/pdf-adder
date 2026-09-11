@@ -1,0 +1,304 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 40px 20px;
+
+  font-family:
+    -apple-system, BlinkMacSystemFont, "Helvetica Neue", Arial, sans-serif;
+
+  background: #f5f6f8;
+  color: #222;
+}
+
+.app {
+  width: 100%;
+  max-width: 760px;
+
+  margin: 0 auto;
+
+  background: #ffffff;
+
+  border-radius: 18px;
+
+  padding: 40px;
+
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.08);
+}
+
+header {
+  text-align: center;
+  margin-bottom: 35px;
+}
+
+header h1 {
+  margin: 0;
+
+  font-size: 32px;
+  letter-spacing: 0.02em;
+}
+
+header p {
+  margin-top: 10px;
+
+  color: #666;
+
+  font-size: 15px;
+}
+
+.drop-area {
+  border: 2px dashed #b8bcc5;
+
+  border-radius: 14px;
+
+  padding: 45px 20px;
+
+  text-align: center;
+
+  background: #fafafa;
+
+  transition: 0.2s;
+
+  cursor: pointer;
+}
+
+.drop-area.drag-over {
+  border-color: #333;
+
+  background: #f1f1f1;
+
+  transform: scale(1.01);
+}
+
+.drop-icon {
+  width: 60px;
+  height: 60px;
+
+  margin: 0 auto 15px;
+
+  border-radius: 12px;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  background: #222;
+
+  color: #fff;
+
+  font-size: 15px;
+
+  font-weight: bold;
+}
+
+.drop-area h2 {
+  margin: 5px 0;
+
+  font-size: 19px;
+}
+
+.drop-area p {
+  color: #888;
+
+  font-size: 14px;
+}
+
+button {
+  font-family: inherit;
+
+  cursor: pointer;
+
+  transition: 0.15s;
+}
+
+.secondary-button {
+  border: 1px solid #ccc;
+
+  background: white;
+
+  padding: 11px 25px;
+
+  border-radius: 8px;
+
+  font-size: 14px;
+}
+
+.secondary-button:hover {
+  background: #f2f2f2;
+}
+
+.file-section {
+  margin-top: 30px;
+}
+
+.file-header {
+  display: flex;
+
+  align-items: center;
+  justify-content: space-between;
+}
+
+.file-header h2 {
+  margin: 0;
+
+  font-size: 17px;
+}
+
+.text-button {
+  border: none;
+
+  background: none;
+
+  color: #666;
+
+  font-size: 13px;
+}
+
+.text-button:hover {
+  color: #000;
+}
+
+#fileCount {
+  margin-top: 8px;
+
+  color: #777;
+
+  font-size: 13px;
+}
+
+#fileList {
+  list-style: none;
+
+  padding: 0;
+
+  margin: 15px 0 0;
+}
+
+#fileList li {
+  display: flex;
+
+  align-items: center;
+
+  padding: 12px 15px;
+
+  margin-bottom: 7px;
+
+  background: #f7f7f7;
+
+  border-radius: 8px;
+
+  font-size: 14px;
+}
+
+#fileList li::before {
+  content: "PDF";
+
+  display: inline-block;
+
+  margin-right: 12px;
+
+  padding: 3px 6px;
+
+  background: #333;
+
+  color: #fff;
+
+  border-radius: 4px;
+
+  font-size: 9px;
+
+  font-weight: bold;
+}
+
+.action-section {
+  margin-top: 30px;
+
+  text-align: center;
+}
+
+.primary-button {
+  width: 100%;
+
+  padding: 16px;
+
+  border: none;
+
+  border-radius: 10px;
+
+  background: #222;
+
+  color: #fff;
+
+  font-size: 16px;
+
+  font-weight: bold;
+}
+
+.primary-button:hover:not(:disabled) {
+  background: #000;
+
+  transform: translateY(-1px);
+}
+
+.primary-button:disabled {
+  background: #bbb;
+
+  cursor: not-allowed;
+}
+
+.status {
+  min-height: 24px;
+
+  margin-top: 15px;
+
+  font-size: 14px;
+
+  color: #555;
+}
+
+.status.error {
+  color: #b00020;
+}
+
+.status.success {
+  color: #147a38;
+}
+
+.hidden {
+  display: none;
+}
+
+footer {
+  margin-top: 35px;
+
+  padding-top: 20px;
+
+  border-top: 1px solid #eee;
+
+  text-align: center;
+}
+
+footer p {
+  margin: 0;
+
+  color: #999;
+
+  font-size: 12px;
+}
+
+@media (max-width: 600px) {
+  body {
+    padding: 20px 12px;
+  }
+
+  .app {
+    padding: 25px 18px;
+  }
+
+  .drop-area {
+    padding: 35px 15px;
+  }
+}
