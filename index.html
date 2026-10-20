@@ -1,70 +1,127 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="ja">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <title>PDF Adder</title>
 
-    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="style.css">
 
-    <!-- PDF処理 -->
+    <!-- PDF処理ライブラリ -->
     <script src="https://cdn.jsdelivr.net/npm/pdf-lib@1.17.1/dist/pdf-lib.min.js"></script>
 
-    <!-- ZIP作成 -->
-    <script src="https://cdn.jsdelivr.net/npm/jszip@3.10.2/dist/jszip.min.js"></script>
-  </head>
+    <!-- ZIP作成ライブラリ -->
+    <script src="https://cdn.jsdelivr.net/npm/jszip@3.10.1/dist/jszip.min.js"></script>
+</head>
 
-  <body>
+<body>
+
     <main class="app">
-      <header>
-        <h1>PDF Adder</h1>
-        <p>パンフレットPDFの先頭に広告ページを追加します</p>
-      </header>
 
-      <section id="dropArea" class="drop-area">
-        <div class="drop-icon">PDF</div>
+        <header>
+            <h1>PDF Adder</h1>
 
-        <h2>ここにPDFをドラッグ＆ドロップ</h2>
+            <p>
+                パンフレットPDFの先頭に広告ページを追加します
+            </p>
+        </header>
 
-        <p>または</p>
 
-        <button id="selectButton" class="secondary-button">PDFを選択</button>
+        <section
+            id="dropArea"
+            class="drop-area"
+        >
 
-        <input
-          type="file"
-          id="fileInput"
-          accept="application/pdf"
-          multiple
-          hidden
-        />
-      </section>
+            <div class="drop-icon">
+                PDF
+            </div>
 
-      <section id="fileSection" class="file-section hidden">
-        <div class="file-header">
-          <h2>選択したPDF</h2>
+            <h2>
+                ここにPDFをドラッグ＆ドロップ
+            </h2>
 
-          <button id="clearButton" class="text-button">すべてクリア</button>
-        </div>
+            <p>
+                または
+            </p>
 
-        <div id="fileCount"></div>
+            <button
+                id="selectButton"
+                class="secondary-button"
+                type="button"
+            >
+                PDFを選択
+            </button>
 
-        <ul id="fileList"></ul>
-      </section>
+            <input
+                type="file"
+                id="fileInput"
+                accept=".pdf,application/pdf"
+                multiple
+                hidden
+            >
 
-      <section class="action-section">
-        <button id="createButton" class="primary-button" disabled>
-          広告付きPDFを作成
-        </button>
+        </section>
 
-        <div id="status" class="status"></div>
-      </section>
 
-      <footer>
-        <p>PDFデータはサーバーへ送信されません。 ブラウザ内で処理されます。</p>
-      </footer>
+        <section
+            id="fileSection"
+            class="file-section hidden"
+        >
+
+            <div class="file-header">
+
+                <h2>
+                    選択したPDF
+                </h2>
+
+                <button
+                    id="clearButton"
+                    class="text-button"
+                    type="button"
+                >
+                    すべてクリア
+                </button>
+
+            </div>
+
+            <div id="fileCount"></div>
+
+            <ul id="fileList"></ul>
+
+        </section>
+
+
+        <section class="action-section">
+
+            <button
+                id="createButton"
+                class="primary-button"
+                type="button"
+                disabled
+            >
+                広告付きPDFを作成
+            </button>
+
+            <div
+                id="status"
+                class="status"
+            ></div>
+
+        </section>
+
+
+        <footer>
+            <p>
+                選択したPDFは外部サーバーへ送信されません。
+                ブラウザ内で処理されます。
+            </p>
+        </footer>
+
     </main>
 
+
     <script src="script.js"></script>
-  </body>
+
+</body>
 </html>
