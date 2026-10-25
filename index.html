@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="ja">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,11 +9,8 @@
 
     <link rel="stylesheet" href="style.css">
 
-    <!-- PDF処理ライブラリ -->
+    <!-- PDF編集ライブラリ -->
     <script src="https://cdn.jsdelivr.net/npm/pdf-lib@1.17.1/dist/pdf-lib.min.js"></script>
-
-    <!-- ZIP作成ライブラリ -->
-    <script src="https://cdn.jsdelivr.net/npm/jszip@3.10.1/dist/jszip.min.js"></script>
 </head>
 
 <body>
@@ -21,29 +19,23 @@
 
         <header>
             <h1>PDF Adder</h1>
-
-            <p>
-                パンフレットPDFの先頭に広告ページを追加します
-            </p>
+            <p>パンフレットPDFの先頭に広告ページを追加します</p>
         </header>
 
 
-        <section
-            id="dropArea"
-            class="drop-area"
-        >
+        <div id="serverWarning" class="warning hidden">
+            このアプリはLive Serverから起動してください。
+            index.htmlを直接ダブルクリックすると広告PDFを読み込めません。
+        </div>
 
-            <div class="drop-icon">
-                PDF
-            </div>
 
-            <h2>
-                ここにPDFをドラッグ＆ドロップ
-            </h2>
+        <section id="dropArea" class="drop-area">
 
-            <p>
-                または
-            </p>
+            <div class="drop-icon">PDF</div>
+
+            <h2>ここにPDFをドラッグ＆ドロップ</h2>
+
+            <p>または</p>
 
             <button
                 id="selectButton"
@@ -54,8 +46,8 @@
             </button>
 
             <input
-                type="file"
                 id="fileInput"
+                type="file"
                 accept=".pdf,application/pdf"
                 multiple
                 hidden
@@ -71,9 +63,10 @@
 
             <div class="file-header">
 
-                <h2>
-                    選択したPDF
-                </h2>
+                <div>
+                    <h2>選択したPDF</h2>
+                    <div id="fileCount"></div>
+                </div>
 
                 <button
                     id="clearButton"
@@ -84,8 +77,6 @@
                 </button>
 
             </div>
-
-            <div id="fileCount"></div>
 
             <ul id="fileList"></ul>
 
@@ -113,8 +104,8 @@
 
         <footer>
             <p>
-                選択したPDFは外部サーバーへ送信されません。
-                ブラウザ内で処理されます。
+                選択したPDFは外部サーバーへ送信されません。<br>
+                PDF処理はブラウザ内で行われます。
             </p>
         </footer>
 
@@ -124,4 +115,5 @@
     <script src="script.js"></script>
 
 </body>
+
 </html>

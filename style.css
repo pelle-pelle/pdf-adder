@@ -2,6 +2,7 @@
     box-sizing: border-box;
 }
 
+
 body {
     margin: 0;
     padding: 40px 20px;
@@ -15,6 +16,7 @@ body {
         sans-serif;
 
     background: #f5f6f8;
+
     color: #222;
 }
 
@@ -25,7 +27,7 @@ body {
 
     margin: 0 auto;
 
-    background: #ffffff;
+    background: #fff;
 
     border-radius: 18px;
 
@@ -38,7 +40,8 @@ body {
 
 header {
     text-align: center;
-    margin-bottom: 35px;
+
+    margin-bottom: 30px;
 }
 
 
@@ -46,7 +49,6 @@ header h1 {
     margin: 0;
 
     font-size: 32px;
-    letter-spacing: 0.02em;
 }
 
 
@@ -58,6 +60,31 @@ header p {
     font-size: 15px;
 }
 
+
+/* ========================================
+   警告
+======================================== */
+
+.warning {
+    margin-bottom: 25px;
+
+    padding: 15px 18px;
+
+    border-radius: 10px;
+
+    background: #fff3cd;
+
+    color: #664d03;
+
+    font-size: 14px;
+
+    line-height: 1.6;
+}
+
+
+/* ========================================
+   ドロップエリア
+======================================== */
 
 .drop-area {
     border: 2px dashed #b8bcc5;
@@ -96,12 +123,12 @@ header p {
 
     margin: 0 auto 15px;
 
-    border-radius: 12px;
-
     display: flex;
 
     align-items: center;
     justify-content: center;
+
+    border-radius: 12px;
 
     background: #222;
 
@@ -127,6 +154,10 @@ header p {
 }
 
 
+/* ========================================
+   ボタン
+======================================== */
+
 button {
     font-family: inherit;
 
@@ -137,13 +168,13 @@ button {
 
 
 .secondary-button {
-    border: 1px solid #ccc;
-
-    background: white;
-
     padding: 11px 25px;
 
+    border: 1px solid #ccc;
+
     border-radius: 8px;
+
+    background: white;
 
     font-size: 14px;
 }
@@ -154,6 +185,10 @@ button {
 }
 
 
+/* ========================================
+   PDF一覧
+======================================== */
+
 .file-section {
     margin-top: 30px;
 }
@@ -162,8 +197,9 @@ button {
 .file-header {
     display: flex;
 
-    align-items: center;
     justify-content: space-between;
+
+    align-items: center;
 
     gap: 20px;
 }
@@ -173,6 +209,15 @@ button {
     margin: 0;
 
     font-size: 17px;
+}
+
+
+#fileCount {
+    margin-top: 6px;
+
+    color: #777;
+
+    font-size: 13px;
 }
 
 
@@ -192,21 +237,12 @@ button {
 }
 
 
-#fileCount {
-    margin-top: 8px;
-
-    color: #777;
-
-    font-size: 13px;
-}
-
-
 #fileList {
     list-style: none;
 
-    padding: 0;
-
     margin: 15px 0 0;
+
+    padding: 0;
 }
 
 
@@ -215,6 +251,10 @@ button {
 
     align-items: center;
 
+    justify-content: space-between;
+
+    gap: 15px;
+
     padding: 12px 15px;
 
     margin-bottom: 7px;
@@ -222,6 +262,13 @@ button {
     background: #f7f7f7;
 
     border-radius: 8px;
+}
+
+
+.file-name {
+    flex: 1;
+
+    min-width: 0;
 
     font-size: 14px;
 
@@ -229,14 +276,12 @@ button {
 }
 
 
-#fileList li::before {
+.file-name::before {
     content: "PDF";
 
     display: inline-block;
 
-    flex-shrink: 0;
-
-    margin-right: 12px;
+    margin-right: 10px;
 
     padding: 3px 6px;
 
@@ -251,6 +296,34 @@ button {
     font-weight: bold;
 }
 
+
+.remove-button {
+    flex-shrink: 0;
+
+    padding: 5px 9px;
+
+    border: 1px solid #ddd;
+
+    border-radius: 6px;
+
+    background: white;
+
+    color: #777;
+
+    font-size: 12px;
+}
+
+
+.remove-button:hover {
+    color: #000;
+
+    background: #eee;
+}
+
+
+/* ========================================
+   PDF作成
+======================================== */
 
 .action-section {
     margin-top: 30px;
@@ -297,9 +370,9 @@ button {
 
     margin-top: 15px;
 
-    font-size: 14px;
-
     color: #555;
+
+    font-size: 14px;
 }
 
 
@@ -312,6 +385,10 @@ button {
     color: #147a38;
 }
 
+
+/* ========================================
+   その他
+======================================== */
 
 .hidden {
     display: none;
@@ -336,7 +413,7 @@ footer p {
 
     font-size: 12px;
 
-    line-height: 1.6;
+    line-height: 1.7;
 }
 
 
@@ -346,17 +423,19 @@ footer p {
         padding: 20px 12px;
     }
 
+
     .app {
         padding: 25px 18px;
     }
 
+
     .drop-area {
         padding: 35px 15px;
     }
+
 
     header h1 {
         font-size: 28px;
     }
 
 }
-
